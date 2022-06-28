@@ -49,3 +49,6 @@ Route::get('new/car/{id}',[ApiCarController::class,"newCar"]);
 Route::post('add/car',[ApiCarController::class,"addCar"])->middleware('jwt.auth');
 Route::post('update/password',[UpdateUserController::class,"update_password"])->middleware('jwt.auth');
 
+Route::post('update/name', [UpdateUserController::class, 'update_name'])->middleware('jwt.auth');
+
+

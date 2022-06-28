@@ -5,10 +5,50 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UpdateUserController extends Controller
 {
+
+
+
+
+    public function update_name(Request $request)
+    {
+        // $user = Auth::id();
+
+        $user = User::where('id', Auth::id())->first();
+
+
+
+        $validate = null;
+        try {
+            $this->validate = $request->validate([
+                'name' => '|required',
+
+            ]);
+        } catch (\Throwable $td) {
+            if ($validate == false) {
+                return response()->json([
+
+                    'message' => $td->getMessage(),
+                    'status' => 0,
+                    'code' => 400,
+
+                ]);
+            }
+        }
+        $user->update([
+            'name' => $request->name,
+
+        ]);
+        return response()->json([
+            'message' => __('auth.success'),
+            'status' => 1,
+            'code' => 200,
+        ]);
+    }
 
 
     public function update_password(Request $request){
