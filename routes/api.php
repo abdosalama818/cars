@@ -42,6 +42,7 @@ Route::group([
 Route::get('brands',[ApiCarController::class,"brands"]);
 Route::get('used/car/{id}',[ApiCarController::class,"usedCar"]);
 Route::get('new/car/{id}',[ApiCarController::class,"newCar"]);
+Route::get('last/cars',[ApiCarController::class,"last_news"]);
 
 //
 

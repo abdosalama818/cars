@@ -107,4 +107,18 @@ class ApiCarController extends Controller
          }
         }
     }
+
+
+    public function last_news(){
+        $cars = Car::orderBy('id','desc')->take(10)->get();
+
+
+        return response()->json([
+            'msg'=>'succeess',
+           'status' => 1,
+            'code'=>200,
+            'dats'=> ResourcesCar::collection($cars)
+        ]);
+
+    }
 }
