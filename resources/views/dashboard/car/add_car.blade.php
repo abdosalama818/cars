@@ -87,7 +87,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1"> رقم الموديل </label>
 
-                                        <input type="text" name="model_number" class="form-control" id="exampleInputEmail1"
+                                        <input type="number" name="model_number" class="form-control" id="exampleInputEmail1"
                                             placeholder="ادخل رقم الموديل ">
                                     </div>
                                 </div>
@@ -109,7 +109,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1"> سعة التانك </label>
 
-                                        <input type="text" name="tank" class="form-control" id="exampleInputEmail1"
+                                        <input type="number" name="tank" class="form-control" id="exampleInputEmail1"
                                             placeholder="ادخل سعة التانك ">
                                     </div>
                                 </div>
@@ -120,7 +120,7 @@
                                     <div class="form-group">
                                         <label for="exampleInputEmail1"> عدد المقاعد </label>
 
-                                        <input type="text" name="seats" class="form-control" id="exampleInputEmail1"
+                                        <input type="number" name="seats" class="form-control" id="exampleInputEmail1"
                                             placeholder="ادخل عدد المقاعد ">
                                     </div>
                                 </div>

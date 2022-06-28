@@ -74,7 +74,13 @@ public function storeCar(Request $request){
 
 }
 
-public function editCar(){
+public function editCar($id){
+    $car = Car::findOrFail($id);
+    $brands = Brand::all();
+    return view('dashboard.car.edit_car',[
+        'car'=>$car,
+        'brands'=>$brands,
+    ]);
 
 }
 
