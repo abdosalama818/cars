@@ -143,7 +143,7 @@
           <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{{Auth::user()->name}}</a>
         </div>
       </div>
 
@@ -181,7 +181,7 @@
 
 
           <li class="nav-item">
-            <a href="{{url('dashboard/show/orders')}}" class="nav-link">
+            <a href="{{url('cars')}}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
 
@@ -217,12 +217,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">@lang('routes.Dashboard')</h1>
+            <h1 class="m-0 text-dark">الصفحه الرئيسيه </h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">@lang('routes.home')</a></li>
-              <li class="breadcrumb-item active">@lang('routes.Dashboard') v1</li>
+              <li class="breadcrumb-item"><a href="#">الصفحه الرئيسيه </a></li>
+
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

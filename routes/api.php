@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Api\ApiCarController;
+use App\Http\Controllers\Api\UpdateUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,5 +46,6 @@ Route::get('new/car/{id}',[ApiCarController::class,"newCar"]);
 //
 
 
-Route::post('add/car',[ApiCarController::class,"addCar"])->middleware('jwt.auth','token');
+Route::post('add/car',[ApiCarController::class,"addCar"])->middleware('jwt.auth');
+Route::post('update/password',[UpdateUserController::class,"update_password"])->middleware('jwt.auth');
 

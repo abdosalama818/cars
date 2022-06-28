@@ -30,6 +30,7 @@ return new class extends Migration
 
             $table->text('engin')->nullable();
             $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
 
 
 

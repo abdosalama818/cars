@@ -15,6 +15,8 @@ class BrandResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id'=>$this->id,
+
             'name'=>$this->name,
             'imd'=>asset('uploads') . '/' .  $this->img,
         ];

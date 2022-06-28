@@ -26,7 +26,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/', [MainController::class, 'index'])->name('dashboard');
+Route::group(
+    [
+        'middleware' => 'auth',
+    ],
+    function(){
+        Route::get('/', [MainController::class, 'index'])->name('dashboard');
 
 Route::get('/brands', [BrandController::class, 'Brands'])->name('brands');
 Route::get('/add/brand', [BrandController::class, 'addBrand'])->name('add_brand');
@@ -44,6 +49,6 @@ Route::get('/edit/car/{id}', [CarController::class, 'editCar'])->name('edit_car'
 Route::get('/delete/car/{id}', [CarController::class, 'deleteCar'])->name('delete_car');
 Route::post('/update/car/{id}', [CarController::class, 'updateCar'])->name('update_car');
 Route::post('/store/car', [CarController::class, 'storeCar'])->name('store_car');
-
+    });
 
 
