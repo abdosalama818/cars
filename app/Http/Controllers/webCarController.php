@@ -9,21 +9,67 @@ use Illuminate\Support\Facades\Storage;
 
 class webCarController extends Controller
 {
-    public function usedBrands(){
+   /*  public function usedBrands(){
         $brands = Brand::where('status','used')->get();
 
        return view('car.usedmodels' , ['brands' =>$brands]);
+    } */
+
+    public function Brands(){
+        $brands = Brand::all();
+
+
+        
+
+       return view('car.used_brand' , ['brands' =>$brands]);
     }
 
-    public function newBrands(){
-        $brands = Brand::where('status','new')->get();
 
-       return view('car.newmodels' , ['brands' =>$brands]);
+    public function Brands_new(){
+        $brands = Brand::all();
+
+
+
+       return view('car.brand_new' , ['brands' =>$brands]);
     }
 
+
+
+
+    public function usedCar($id){
+
+
+        $cars = Car::where('type','used')->where('brand_id',$id)->get();
+
+
+        return view('car.newestcar' , ['cars'=>$cars]);
+
+    }
+
+
+
+    public function newCar($id){
+        $cars = Car::where('type','new')->where('brand_id',$id)->get();
+        return view('car.newestcar' , ['cars'=>$cars]);
+    }
 
 
     public function details($id){
+
+
+        $car = Car::findOrFail($id);
+        return view('car.details' , ['car'=>$car]);
+
+    }
+
+
+
+
+
+
+
+
+ /*    public function details($id){
 
 
         $car = Car::findOrFail($id);
@@ -45,7 +91,7 @@ class webCarController extends Controller
     public function newCar($id){
         $cars = Car::where('type','new')->where('brand_id',$id)->get();
         return view('car.newestcar' , ['cars'=>$cars]);
-    }
+    } */
 
     public function addCar(Request $request)
     {

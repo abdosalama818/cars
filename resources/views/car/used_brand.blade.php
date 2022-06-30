@@ -127,7 +127,7 @@
         @foreach ($brands as $brand)
             <div class="box">
                 <div class="imgBox">
-                 <a href="{{url("used/car/$brand->id")}}">   <img src="{{ "uploads/$brand->img" }}" alt="">  </a>
+                 <a href="{{url("used/car",$brand->id)}}">   <img src="{{ "uploads/$brand->img" }}" alt="">  </a>
                 </div>
                 <div class="content">
                     <h2>{{ $brand->name }}</h2>

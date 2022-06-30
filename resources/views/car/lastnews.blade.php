@@ -1643,7 +1643,7 @@
             <a href="#" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
                 <img class="u-logo-image u-logo-image-1" data-image-width="64" src="">
             </a>
-            <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+           {{--  <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
                 <div class="menu-collapse"
                     style="font-size: 1rem; letter-spacing: 0; font-weight: 700; text-transform: uppercase;">
                     <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-light-2 u-text-body-alt-color u-text-hover-palette-1-light-1"
@@ -1725,7 +1725,63 @@
                     </div>
                     <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
                 </div>
-            </nav>
+            </nav> --}}
+
+
+
+
+            <nav class="navbar navbar-expand-lg navbar-light ml-auto {{--  bg-light --}}">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               {{--    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a>
+                    </li>
+
+                  </ul> --}}
+
+
+                  <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                    <li class="u-nav-item mx-2">
+                        <a class="u-button-style u-nav-link" href="{{ url('/') }}"
+                            data-page-id="60111">Home</a>
+
+                    </li>
+                    <li class="u-nav-item mx-2">
+                        <a class="u-button-style u-nav-link" href="{{url('/brand')}}" data-page-id="60111"> Used
+                            Cars</a>
+
+                    </li>
+                    <li class="u-nav-item mx-2">
+                        <a class="u-button-style u-nav-link" href="{{url('/brand_new')}}" data-page-id="60111">Newest
+                            Cars</a>
+
+                    </li>
+                    <li class="u-nav-item mx-2">
+                        <a class="u-button-style u-nav-link" href="{{url('/add')}}" data-page-id="60111">Add
+                            Car</a>
+
+                    </li>
+                    <li class="u-nav-item mx-2">
+                        <a class="u-button-style u-nav-link" href="{{url('/last/cars')}}" data-page-id="60111">Last
+                            News</a>
+
+                    </li>
+                </ul>
+
+                </div>
+              </nav>
+
+
+
+
         </div>
     </header>
 

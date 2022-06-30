@@ -21,16 +21,17 @@ use Illuminate\Support\Facades\Route;
 
 //===========Amgad==================
 
-Route::get('brand',[webCarController::class,"usedBrands"]);
-Route::get('newbrand',[webCarController::class,"newBrands"]);
-Route::get('details/{id}',[webCarController::class,"details"]);
+Route::get('brand',[webCarController::class,"brands"]);
+Route::get('brand_new',[webCarController::class,"Brands_new"]);
 Route::get('used/car/{id}',[webCarController::class,"usedCar"]);
 Route::get('new/car/{id}',[webCarController::class,"newCar"]);
-Route::get('last/cars',[webCarController::class,"last_news"]);
+
+Route::get('details/{id}',[webCarController::class,"details"]);
+
 Route::get('add',function(){
     $brands = Brand::all();
     return view('car.addcar' , ['brands'=>$brands]);
-});
+})->middleware(/* 'user', */'Isuser','auth');
 
 Route::post('add/car',[webCarController::class,"addCar"]);
 
@@ -48,7 +49,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(
     [
-        'middleware' => 'auth',
+        'middleware' => ['auth','IsAdmin'],
     ],
     function(){
         Route::get('/admin', [MainController::class, 'index'])->name('dashboard');
