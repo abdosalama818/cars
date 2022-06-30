@@ -85,12 +85,65 @@ public function editCar($id){
 }
 
 
-public function updateCar(){
+public function updateCar($id,Request $request){
+
+
+    $car = Car::findOrFail($id);
+
+    $request->validate([
+        'name'=>'required|string',
+        'engin'=>'required|string',
+        'brand_id'=>'required|numeric',
+        'price'=>'required',
+        'model_number'=>'required',
+        'speed'=>'required',
+        'tank'=>'required',
+        'seats'=>'required',
+        'status'=>'required',
+        'desc'=>'required|string',
+        'kilos'=>'required',
+
+        'is_automatic'=>'required',
+    ]);
+
+
+    $imgPath=$car->img;
+
+    if($request->hasFile('img')){
+        Storage::delete($car->img);
+        $imgPath = Storage::putFile('Cars',$request->img);
+    }
+
+
+
+
+    $car->update([
+        'name'=>$request->name,
+
+        'engin'=>$request->engin,
+        'img'=>$imgPath,
+        'brand_id'=>$request->brand_id,
+        'price'=>$request->price,
+        'model_number'=>$request->model_number,
+        'speed'=>$request->speed,
+        'fual_tank'=>$request->tank,
+        'type'=>$request->status,
+        'seats'=>$request->seats,
+        'desc'=>$request->desc,
+        'kilos'=>$request->kilos,
+        'is_automatic'=>$request->is_automatic,
+    ]);
+
+    return redirect(route('cars'));
 
 }
 
 
-public function deleteCar(){
+public function deleteCar($id){
+    $car = Car::findOrFail($id);
 
+    Storage::delete($car->img);
+    $car->delete();
+    return redirect(route('cars'));
 }
 }
