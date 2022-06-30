@@ -3,6 +3,8 @@
 use App\Http\Controllers\Dashboard\BrandController;
 use App\Http\Controllers\Dashboard\CarController;
 use App\Http\Controllers\Dashboard\MainController;
+use App\Http\Controllers\webCarController;
+use App\Models\Brand;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,8 +19,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//===========Amgad==================
+
+Route::get('brand',[webCarController::class,"usedBrands"]);
+Route::get('newbrand',[webCarController::class,"newBrands"]);
+Route::get('details/{id}',[webCarController::class,"details"]);
+Route::get('used/car/{id}',[webCarController::class,"usedCar"]);
+Route::get('new/car/{id}',[webCarController::class,"newCar"]);
+Route::get('last/cars',[webCarController::class,"last_news"]);
+Route::get('add',function(){
+    $brands = Brand::all();
+    return view('car.addcar' , ['brands'=>$brands]);
+});
+
+Route::post('add/car',[webCarController::class,"addCar"]);
+
+
+//===========end=====================
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('car.home');
 });
 
 Auth::routes();
@@ -31,7 +51,7 @@ Route::group(
         'middleware' => 'auth',
     ],
     function(){
-        Route::get('/', [MainController::class, 'index'])->name('dashboard');
+        Route::get('/admin', [MainController::class, 'index'])->name('dashboard');
 
 Route::get('/brands', [BrandController::class, 'Brands'])->name('brands');
 Route::get('/add/brand', [BrandController::class, 'addBrand'])->name('add_brand');

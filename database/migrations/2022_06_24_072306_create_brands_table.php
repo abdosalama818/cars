@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('img')->nullable();
+            $table->enum('status',['new' , 'used'])->nullable();
             $table->timestamps();
         });
     }
