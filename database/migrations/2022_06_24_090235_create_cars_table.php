@@ -26,7 +26,7 @@ return new class extends Migration
             $table->bigInteger('seats')->nullable();
 
             $table->enum('is_automatic',['automatic','manual'])->default('automatic')->nullable();
-            $table->enum('type',['used','new'])->default('new')->nullable();
+            $table->enum('type',['used','new'])->default('used')->nullable();
 
             $table->text('engin')->nullable();
             $table->foreignId('brand_id')->constrained('brands')->onDelete('cascade')->onUpdate('cascade');

@@ -25,6 +25,7 @@ Route::get('brand',[webCarController::class,"brands"]);
 Route::get('brand_new',[webCarController::class,"Brands_new"]);
 Route::get('used/car/{id}',[webCarController::class,"usedCar"]);
 Route::get('new/car/{id}',[webCarController::class,"newCar"]);
+Route::get('last/cars',[webCarController::class,"last_news"]);
 
 Route::get('details/{id}',[webCarController::class,"details"]);
 

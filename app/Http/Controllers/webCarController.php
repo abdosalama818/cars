@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class webCarController extends Controller
@@ -19,7 +20,7 @@ class webCarController extends Controller
         $brands = Brand::all();
 
 
-        
+
 
        return view('car.used_brand' , ['brands' =>$brands]);
     }
@@ -117,6 +118,7 @@ class webCarController extends Controller
 
                 Car::create([
                     'name'=>$request->name,
+                    'user_id'=>Auth::id(),
                     'engin'=>$request->engin,
                     'img'=>$imgPath,
                     'brand_id'=>$request->brand_id,
@@ -138,7 +140,8 @@ class webCarController extends Controller
 
 
     public function last_news(){
-        $cars = Car::orderBy('id','desc')->take(10)->get();
+/*         dd('dddddddddd');
+ */        $cars = Car::orderBy('id','desc')->take(10)->get();
 
         return view('car.lastnews' , ['cars'=>$cars]);
 
