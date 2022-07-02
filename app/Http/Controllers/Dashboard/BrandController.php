@@ -70,7 +70,7 @@ class BrandController extends Controller
 
         $request->validate([
             'name'=>"required|string",
-            'img'=>"required|image",
+            'img'=>"image",
 
         ]);
         $imgPath=$brand->img;
@@ -95,6 +95,18 @@ class BrandController extends Controller
         Storage::delete($brand->img);
         $brand->delete();
         return redirect(route('brands'));
+
+    }
+
+
+    public function searchBrand(Request $request){
+        $brand = $request->search;
+        $brands = Brand::where('name','like',"%$brand%")->get();
+        return view('dashboard.brand.brands',[
+            'brands' => $brands,
+            'brand'=>$brand
+
+        ]);
 
     }
 }

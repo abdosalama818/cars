@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\BrandResource;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Car as ResourcesCar;
+use App\Http\Resources\LastNews as ResourcesLastNews;
+use App\Models\LastNews;
 
 class ApiCarController extends Controller
 {
@@ -110,14 +112,15 @@ class ApiCarController extends Controller
 
 
     public function last_news(){
-        $cars = Car::orderBy('id','desc')->take(10)->get();
+
+        $lastNews = LastNews::all();
 
 
         return response()->json([
             'msg'=>'succeess',
            'status' => 1,
             'code'=>200,
-            'dats'=> ResourcesCar::collection($cars)
+            'dats'=> ResourcesLastNews::collection($lastNews)
         ]);
 
     }

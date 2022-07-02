@@ -15,7 +15,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('style.css') }}?version=180c13c4-d847-45ff-aa39-0687fe6855fa" media="screen">
+    <link rel="stylesheet" href="{{ asset('style.css') }}?version=180c13c4-d847-45ff-aa39-0687fe6855fa"
+        media="screen">
     <script class="u-script" type="text/javascript" src="http://static.nicepage.com/shared/assets/jquery-1.9.1.min.js"
         defer=""></script>
     <script class="u-script" type="text/javascript"
@@ -1645,7 +1646,7 @@
             <a href="#" class="u-image u-logo u-image-1" data-image-width="80" data-image-height="40">
                 <img class="u-logo-image u-logo-image-1" data-image-width="64" src="">
             </a>
-           {{--  <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+            {{-- <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
                 <div class="menu-collapse"
                     style="font-size: 1rem; letter-spacing: 0; font-weight: 700; text-transform: uppercase;">
                     <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-light-2 u-text-body-alt-color u-text-hover-palette-1-light-1"
@@ -1732,14 +1733,16 @@
 
 
 
-            <nav class="navbar navbar-expand-lg navbar-light ml-auto {{--  bg-light --}}">
+            <nav class="navbar navbar-expand-lg navbar-light ml-auto {{-- bg-light --}}">
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               {{--    <ul class="navbar-nav mr-auto">
+                    {{-- <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                       <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
@@ -1750,36 +1753,38 @@
                   </ul> --}}
 
 
-                  <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                    <li class="u-nav-item mx-2">
-                        <a class="u-button-style u-nav-link" href="{{ url('/') }}"
-                            data-page-id="60111">Home</a>
+                    <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                        <li class="u-nav-item mx-2" style="color: white">
+                            <a class="u-button-style u-nav-link" style="color: white;font-size:18px" href="{{ url('/') }}"
+                                data-page-id="60111">Home{{-- <span  style="color: white !mportant">Home</span> --}}</a>
 
-                    </li>
-                    <li class="u-nav-item mx-2">
-                        <a class="u-button-style u-nav-link" href="{{url('/brand')}}" data-page-id="60111"> Used
-                            Cars</a>
+                        </li>
+                        <li class="u-nav-item mx-2">
+                            <a class="u-button-style u-nav-link"style="color: white;font-size:18px" href="{{ url('/brand') }}" data-page-id="60111"> Used
+                                Cars</a>
 
-                    </li>
-                    <li class="u-nav-item mx-2">
-                        <a class="u-button-style u-nav-link" href="{{url('/brand_new')}}" data-page-id="60111">Newest
-                            Cars</a>
+                        </li>
+                        <li class="u-nav-item mx-2">
+                            <a class="u-button-style u-nav-link"style="color: white;font-size:18px" href="{{ url('/brand_new') }}"
+                                data-page-id="60111">Newest
+                                Cars</a>
 
-                    </li>
-                    <li class="u-nav-item mx-2">
-                        <a class="u-button-style u-nav-link" href="{{url('/add')}}" data-page-id="60111">Add
-                            Car</a>
+                        </li>
+                        <li class="u-nav-item mx-2">
+                            <a class="u-button-style u-nav-link"style="color: white;font-size:18px" href="{{ url('/add') }}" data-page-id="60111">Add
+                                Car</a>
 
-                    </li>
-                    <li class="u-nav-item mx-2">
-                        <a class="u-button-style u-nav-link" href="{{url('/last/cars')}}" data-page-id="60111">Last
-                            News</a>
+                        </li>
+                        <li class="u-nav-item mx-2">
+                            <a class="u-button-style u-nav-link" style="color: white;font-size:18px" href="{{ url('/last/cars') }}"
+                                data-page-id="60111">Last
+                                News</a>
 
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
 
                 </div>
-              </nav>
+            </nav>
 
 
 
@@ -1787,7 +1792,7 @@
         </div>
     </header>
 
-    <section class="u-align-left u-clearfix u-image u-section-2" id="carousel_2a21">
+    <section class="mb-5 u-align-left u-clearfix u-image u-section-2" id="carousel_2a21">
         <div class="u-clearfix u-sheet u-sheet-1">
             <h5 class="u-text u-text-body-alt-color u-text-1">Car Service</h5>
             <h1 class="u-text u-text-body-alt-color u-text-2">Car Details</h1>
@@ -1795,62 +1800,35 @@
     </section>
 
 
+    <div class="container my-5">
 
 
 
-
-    <section class="u-clearfix u-section-9" id="carousel_5983">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-            <div class="u-layout">
-                <div class="u-layout-row">
-                    <div class="u-size-30 u-size-60-md">
-                        <div class="u-layout-col">
-                            <div class="u-container-style u-image u-layout-cell u-left-cell u-size-60 u-image-1">
-                                <div class="u-container-layout"><img class="w-100"
-                                        src="{{ asset("uploads/$car->img") }}" alt=""></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="u-size-30 u-size-60-md">
-                        <div class="u-layout-col">
-                            <div class="u-size-30">
-                                <div class="u-layout-row">
-                                    <div class="u-container-style u-image u-layout-cell u-size-30 u-image-2">
-                                        <div class="u-container-layout"><img class="w-100"
-                                                src="{{ asset("uploads/$car->img") }}" alt=""></div>
-                                    </div>
-                                    <div
-                                        class="u-align-left-md u-align-left-sm u-align-left-xs u-container-style u-custom-color-3 u-layout-cell u-right-cell u-size-30 u-layout-cell-3">
-                                        <div
-                                            class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-3">
-                                            <h2 class="u-text u-text-1">{{ $car->name }}</h2>
-                                            <!---- <a href="#" class="u-btn u-button-style u-palette-2-base u-btn-1"></a> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="u-size-30">
-                                <div class="u-layout-row">
-                                    <div
-                                        class="u-container-style u-layout-cell u-palette-2-base u-size-30 u-layout-cell-4">
-                                        <div class="u-container-layout u-valign-middle">
-                                            <h2 class="u-text u-text-2"></h2>
-                                            <p class="u-text u-text-3">{{ $car->desc }}</p>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="u-container-style u-image u-layout-cell u-right-cell u-size-30  u-image-3 ">
-                                        <div class="u-container-layout"><img class="w-100"
-                                                src="{{ asset("uploads/$car->img") }}" alt=""></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="slider my-5">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img src="{{asset('uploads') . '/'. $car->img }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{asset('uploads') . '/'. $car->img }}" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{asset('uploads') . '/'. $car->img }}" class="d-block w-100" alt="...">
+                  </div>
                 </div>
-            </div>
-        </div>
-    </section>
+              </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
     <div class="container my-5 text-center">
         <div class="row">
 
@@ -1860,6 +1838,17 @@
                     <h4>model number: {{ $car->model_number }}</h4>
                 </div>
             </div>
+
+
+            <div class="col-3  ">
+                <div style="font-size:40px ;"><i class="fa-solid fa-car-on"></i></div>
+                <div>
+                    <h4>car name: {{ $car->name }}</h4>
+                </div>
+            </div>
+
+
+
             <div class="col-3  ">
                 <div style="font-size:40px ;"><i class="fa-solid fa-gauge-high"></i></div>
                 <div>
@@ -1869,7 +1858,7 @@
             <div class="col-3  ">
                 <div style="font-size:40px ;"><i class="fa-brands fa-stack-exchange"></i></div>
                 <div>
-                    <h4>fual tank:{{ $car->faul_tank }}</h4>
+                    <h4>fual tank:{{ $car->fual_tank }}</h4>
                 </div>
             </div>
 
@@ -1880,6 +1869,9 @@
                     <h4> price:{{ $car->price }}</h4>
                 </div>
             </div>
+
+
+
 
             <div class="col-3  ">
                 <div style="font-size:40px ;"><i class="fa-solid fa-gauge-simple-high"></i></div>
@@ -1901,6 +1893,28 @@
                     <h4>Engin: {{ $car->engin }}</h4>
                 </div>
             </div>
+
+            <div class="col-md-3"></div>
+
+
+
+
+            <div class="col-3  ">
+                <div style="font-size:40px ;"><i class="fa-solid fa-money-bill-wave"></i></div>
+                <div>
+                    <h4> mobile:{{ $car->user->mobile }}</h4>
+                </div>
+            </div>
+
+
+            <div class="col-3  ">
+                <div style="font-size:40px ;"><i class="fa-solid fa-money-bill-wave"></i></div>
+                <div>
+                    <h4> added by:{{ $car->user->name }}</h4>
+                </div>
+            </div>
+
+
 
 
 

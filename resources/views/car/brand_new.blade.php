@@ -121,7 +121,7 @@
     <div style="text-align: center; margin-top:10px;" >
         <h2>Choose Brand</h2>
     </div>
-
+<br>
     <div class="container">
 
         @foreach ($brands as $brand)

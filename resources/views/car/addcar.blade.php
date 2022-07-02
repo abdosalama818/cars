@@ -1753,28 +1753,30 @@
 
 
                           <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                            <li class="u-nav-item mx-2">
-                                <a class="u-button-style u-nav-link" href="{{ url('/') }}"
-                                    data-page-id="60111">Home</a>
+                            <li class="u-nav-item mx-2" style="color: white">
+                                <a class="u-button-style u-nav-link" style="color: white;font-size:18px" href="{{ url('/') }}"
+                                    data-page-id="60111">Home{{-- <span  style="color: white !mportant">Home</span> --}}</a>
 
                             </li>
                             <li class="u-nav-item mx-2">
-                                <a class="u-button-style u-nav-link" href="{{url('/brand')}}" data-page-id="60111"> Used
+                                <a class="u-button-style u-nav-link"style="color: white;font-size:18px" href="{{ url('/brand') }}" data-page-id="60111"> Used
                                     Cars</a>
 
                             </li>
                             <li class="u-nav-item mx-2">
-                                <a class="u-button-style u-nav-link" href="{{url('/brand_new')}}" data-page-id="60111">Newest
+                                <a class="u-button-style u-nav-link"style="color: white;font-size:18px" href="{{ url('/brand_new') }}"
+                                    data-page-id="60111">Newest
                                     Cars</a>
 
                             </li>
                             <li class="u-nav-item mx-2">
-                                <a class="u-button-style u-nav-link" href="{{url('/add')}}" data-page-id="60111">Add
+                                <a class="u-button-style u-nav-link"style="color: white;font-size:18px" href="{{ url('/add') }}" data-page-id="60111">Add
                                     Car</a>
 
                             </li>
                             <li class="u-nav-item mx-2">
-                                <a class="u-button-style u-nav-link" href="{{url('/last/cars')}}" data-page-id="60111">Last
+                                <a class="u-button-style u-nav-link" style="color: white;font-size:18px" href="{{ url('/last/cars') }}"
+                                    data-page-id="60111">Last
                                     News</a>
 
                             </li>
@@ -1930,7 +1932,8 @@
                                     </div>
 
                                 </div>
-                                <div class="col-md-6 ">
+
+                               <div class="col-md-6 ">
 
                                     <h6 class="">نوع السياره </h6>
 
@@ -1954,7 +1957,7 @@
                                 </div>
 
 
-                                <div class="col-md-6 ">
+                    {{--             <div class="col-md-6 ">
 
                                     <h6 class="">حالة السياره </h6>
 
@@ -1975,7 +1978,7 @@
                                         </label>
                                     </div>
 
-                                </div>
+                                </div> --}}
 
 
 

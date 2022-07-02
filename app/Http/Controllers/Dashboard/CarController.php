@@ -146,4 +146,19 @@ public function deleteCar($id){
     $car->delete();
     return redirect(route('cars'));
 }
+
+
+
+public function searchCar(Request $request){
+    $car = $request->search;
+    $cars = Car::where('name','like',"%$car%")->get();
+    return view('dashboard.car.cars',[
+        'cars' => $cars,
+        'car'=>$car
+
+    ]);
+
+}
+
+
 }

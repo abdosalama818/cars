@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Brand;
 use App\Models\Car;
+use App\Models\LastNews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -66,34 +67,6 @@ class webCarController extends Controller
 
 
 
-
-
-
-
- /*    public function details($id){
-
-
-        $car = Car::findOrFail($id);
-        return view('car.details' , ['car'=>$car]);
-
-    }
-
-
-    public function usedCar($id){
-
-
-        $cars = Car::where('type','used')->where('brand_id',$id)->get();
-        return view('car.newestcar' , ['cars'=>$cars]);
-
-    }
-
-
-
-    public function newCar($id){
-        $cars = Car::where('type','new')->where('brand_id',$id)->get();
-        return view('car.newestcar' , ['cars'=>$cars]);
-    } */
-
     public function addCar(Request $request)
     {
 
@@ -107,7 +80,7 @@ class webCarController extends Controller
                     'speed'=>'required|numeric',
                     'tank'=>'required',
                     'seats'=>'required',
-                    'status'=>'required',
+                   /*  'status'=>'required', */
                     'desc'=>'required|string',
                     'kilos'=>'required|numeric',
                     'img'=>'required|image',
@@ -126,7 +99,7 @@ class webCarController extends Controller
                     'model_number'=>$request->model_number,
                     'speed'=>$request->speed,
                     'fual_tank'=>$request->tank,
-                    'type'=>$request->status,
+                  /*   'type'=>$request->status, */
                     'seats'=>$request->seats,
                     'desc'=>$request->desc,
                     'kilos'=>$request->kilos,
@@ -141,7 +114,7 @@ class webCarController extends Controller
 
     public function last_news(){
 /*         dd('dddddddddd');
- */        $cars = Car::orderBy('id','desc')->take(10)->get();
+ */        $cars = LastNews::all();
 
         return view('car.lastnews' , ['cars'=>$cars]);
 

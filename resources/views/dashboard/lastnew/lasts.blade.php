@@ -8,16 +8,16 @@
 <div class="row">
     <div class="col-12">
        <div class="add-cat m-2">
-        <a class="btn btn-success " href="{{url('add/brand')}}">اضافة نوع جديد </a>
+        <a class="btn btn-success " href="{{url('add/last')}}">اضافة نوع جديد </a>
        </div>
             <div class="card">
                 <div class="card-header">
 
-                    <h3 class="card-title">عرض انواع السيارات </h3>
+                    <h3 class="card-title">عرض اخبار السيارات </h3>
 
 
                     <div class="card-tools ">
-                  <form action="{{url('search/brand/')}}" method="get">
+                  <form action="{{url('/search/last')}}" method="get">
                     <div class="form-group ">
                         <input type="text" name="search" class="form-control float-right" placeholder="Search">
 
@@ -37,8 +37,10 @@
 
                         <tr>
                         <th>ID</th>
-                        <th>نوع السياره  </th>
-                        <th>الماركه </th>
+                        <th> عنوان الخبر </th>
+                        <th> تفاصيل الخبر </th>
+                        <th> صورة الخبر </th>
+
 
 
                         <th>الاكشن </th>
@@ -51,20 +53,21 @@
 
 
                        <tr>
-                        @foreach ($brands as $brand )
+                        @foreach ($lasts as $last )
 
-                        <td>{{$brand->id}}</td>
+                        <td>{{$last->id}}</td>
 
-                      <td>{{$brand->name}}</td>
-                     {{--  <td><img src='{{asset("uploads/$brand->img}")}}' alt="" srcset=""> {{$brand->img}}</td> --}}
-                      <td><img src='{{asset("uploads/$brand->img")}}' style="width:100px" alt="" srcset=""></td>
+                      <td>{{$last->name}}</td>
+                      <td>{{$last->desc}}</td>
+                     {{--  <td><img src='{{asset("uploads/$last->img}")}}' alt="" srcset=""> {{$last->img}}</td> --}}
+                      <td><img src='{{asset("uploads/$last->img")}}' style="width:100px" alt="" srcset=""></td>
 
 
 
 
                         <td>
-                            <a href="{{url('edit/brand',$brand->id)}}" target="_blank" class="btn btn-info" rel="noopener noreferrer">تعديل </a>
-                            <a href="{{url('delete/brand',$brand->id)}}" class="btn btn-danger" rel="noopener noreferrer">حذف</a>
+                            <a href="{{url('edit/last',$last->id)}}" target="_blank" class="btn btn-info" rel="noopener noreferrer">تعديل </a>
+                            <a href="{{url('delete/last',$last->id)}}" class="btn btn-danger" rel="noopener noreferrer">حذف</a>
                         </td>
                         </tr>
 
