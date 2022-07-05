@@ -28,6 +28,18 @@ class ApiCarController extends Controller
     }
 
 
+    public function cars(){
+        $cars = Car::all();
+
+        return response()->json([
+            'msg'=>'succeess',
+           'status' => 1,
+            'code'=>200,
+            'dats'=> ResourcesCar::collection($cars)
+        ]);
+    }
+
+
     public function usedCar($id){
 
 
@@ -50,6 +62,33 @@ class ApiCarController extends Controller
             'code'=>200,
             'dats'=> ResourcesCar::collection($cars)
         ]);
+    }
+
+    public function carDeatails($id){
+        $car = Car::find($id);
+
+        if($car == null)
+        {
+            return response()->json([
+                'msg'=>'car not found ',
+               'status' => 0,
+                'code'=>400,
+
+            ]);
+        }
+
+
+                return response()->json([
+                    'msg'=>'succeess',
+                   'status' => 1,
+                    'code'=>200,
+                    'dats'=> new ResourcesCar($car)
+                ]);
+
+
+
+
+
     }
 
     public function addCar(Request $request)
@@ -93,6 +132,83 @@ class ApiCarController extends Controller
 
                 return response()->json([
                     'msg'=>'added succeessfully',
+                   'status' => 1,
+                    'code'=>200,
+
+                ]);
+
+        } catch (\Throwable $td){
+         if($validate == false){
+            return response()->json([
+                'msg'=>$td->getMessage(),
+               'status' => 0,
+                'code'=>400,
+
+            ]);
+         }
+        }
+    }
+
+
+
+
+    public function updateCar(Request $request,$id)
+    {
+        $car = Car::find($id);
+
+        if($car == null)
+        {
+            return response()->json([
+                'msg'=>'car not found ',
+               'status' => 0,
+                'code'=>400,
+
+            ]);
+        }
+
+        $validate = null ;
+        try{
+            $this->validate = $request->validate(
+                [
+                    'name'=>'string',
+                    'engin'=>'string',
+                    'brand_id'=>'numeric|',
+                    'price'=>'sometimes',
+                    'model_number'=>'sometimes',
+                    'speed'=>'numeric',
+                    'tank'=>'sometimes',
+                    'seats'=>'sometimes',
+                    'status'=>'sometimes',
+                    'desc'=>'string',
+                    'kilos'=>'numeric',
+                    'img'=>'image',
+                    'is_automatic'=>'sometimes',
+                ]);
+                $imgPath=$car->img;
+
+    if($request->hasFile('img')){
+        Storage::delete($car->img);
+        $imgPath = Storage::putFile('Cars',$request->img);
+    }
+
+               $car->update([
+                    'name'=>$request->name,
+                    'engin'=>$request->engin,
+                    'img'=>$imgPath,
+                    'brand_id'=> $car->brand_id,
+                    'price'=>$request->price,
+                    'model_number'=>$request->model_number,
+                    'speed'=>$request->speed,
+                    'fual_tank'=>$request->tank,
+                    'type'=>$request->status,
+                    'seats'=>$request->seats,
+                    'desc'=>$request->desc,
+                    'kilos'=>$request->kilos,
+                    'is_automatic'=>$request->is_automatic,
+                ]);
+
+                return response()->json([
+                    'msg'=>'updated succeessfully',
                    'status' => 1,
                     'code'=>200,
 

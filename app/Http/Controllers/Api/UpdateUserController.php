@@ -51,6 +51,46 @@ class UpdateUserController extends Controller
     }
 
 
+    public function email_mobile(Request $request)
+    {
+        // $user = Auth::id();
+
+        $user = User::where('id', Auth::id())->first();
+
+
+
+        $validate = null;
+        try {
+            $this->validate = $request->validate([
+                'email' => 'required|email|max:255',
+                'mobile' => 'required|min:10|numeric',
+
+            ]);
+        } catch (\Throwable $td) {
+            if ($validate == false) {
+                return response()->json([
+
+                    'message' => $td->getMessage(),
+                    'status' => 0,
+                    'code' => 400,
+
+                ]);
+            }
+        }
+        $user->update([
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+
+        ]);
+        return response()->json([
+            'message' => __('auth.success'),
+            'status' => 1,
+            'code' => 200,
+        ]);
+    }
+
+
+
     public function update_password(Request $request){
 
 

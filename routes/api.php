@@ -42,14 +42,19 @@ Route::group([
 Route::get('brands',[ApiCarController::class,"brands"]);
 Route::get('used/car/{id}',[ApiCarController::class,"usedCar"]);
 Route::get('new/car/{id}',[ApiCarController::class,"newCar"]);
+Route::get('car/info/{id}',[ApiCarController::class,"carDeatails"]);
 Route::get('last/cars',[ApiCarController::class,"last_news"]);
+Route::get('cars',[ApiCarController::class,"cars"]);
+
 
 //
 
 
 Route::post('add/car',[ApiCarController::class,"addCar"])->middleware('jwt.auth');
+Route::post('update/car/{id}',[ApiCarController::class,"updateCar"])->middleware('jwt.auth');
 Route::post('update/password',[UpdateUserController::class,"update_password"])->middleware('jwt.auth');
 
 Route::post('update/name', [UpdateUserController::class, 'update_name'])->middleware('jwt.auth');
+Route::post('update/email_mobile', [UpdateUserController::class, 'email_mobile'])->middleware('jwt.auth');
 
 

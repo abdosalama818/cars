@@ -1733,6 +1733,7 @@
 
 
 
+
             <nav class="navbar navbar-expand-lg navbar-light ml-auto {{-- bg-light --}}">
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -1751,6 +1752,7 @@
                     </li>
 
                   </ul> --}}
+
 
 
                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
@@ -1782,9 +1784,10 @@
 
                         </li>
                     </ul>
+                   </div>
 
-                </div>
             </nav>
+
 
 
 
@@ -1832,7 +1835,7 @@
     <div class="container my-5 text-center">
         <div class="row">
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-car-on"></i></div>
                 <div>
                     <h4>model number: {{ $car->model_number }}</h4>
@@ -1840,7 +1843,7 @@
             </div>
 
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-car-on"></i></div>
                 <div>
                     <h4>car name: {{ $car->name }}</h4>
@@ -1849,13 +1852,13 @@
 
 
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-gauge-high"></i></div>
                 <div>
                     <h4>kilos:{{ $car->kilos }}</h4>
                 </div>
             </div>
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-brands fa-stack-exchange"></i></div>
                 <div>
                     <h4>fual tank:{{ $car->fual_tank }}</h4>
@@ -1863,7 +1866,7 @@
             </div>
 
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-money-bill-wave"></i></div>
                 <div>
                     <h4> price:{{ $car->price }}</h4>
@@ -1873,21 +1876,21 @@
 
 
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-gauge-simple-high"></i></div>
                 <div>
                     <h4>speed:{{ $car->speed }}</h4>
                 </div>
             </div>
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-wand-magic"></i></div>
                 <div>
                     <h4>manual or automatic:{{ $car->is_automatic }} </h4>
                 </div>
             </div>
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-car-on"></i></div>
                 <div>
                     <h4>Engin: {{ $car->engin }}</h4>
@@ -1899,7 +1902,7 @@
 
 
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-money-bill-wave"></i></div>
                 <div>
                     <h4> mobile:{{ $car->user->mobile }}</h4>
@@ -1907,7 +1910,7 @@
             </div>
 
 
-            <div class="col-3  ">
+            <div class="col-md-3">
                 <div style="font-size:40px ;"><i class="fa-solid fa-money-bill-wave"></i></div>
                 <div>
                     <h4> added by:{{ $car->user->name }}</h4>
