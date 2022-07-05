@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\Car as ResourcesCar;
 use App\Http\Resources\LastNews as ResourcesLastNews;
 use App\Models\LastNews;
+use Illuminate\Support\Facades\Auth;
 
 class ApiCarController extends Controller
 {
@@ -119,6 +120,7 @@ class ApiCarController extends Controller
                     'engin'=>$request->engin,
                     'img'=>$imgPath,
                     'brand_id'=>$request->brand_id,
+                    'user_id'=>Auth::id(),
                     'price'=>$request->price,
                     'model_number'=>$request->model_number,
                     'speed'=>$request->speed,
@@ -170,19 +172,19 @@ class ApiCarController extends Controller
         try{
             $this->validate = $request->validate(
                 [
-                    'name'=>'string',
-                    'engin'=>'string',
+                    'name'=>'required|string',
+                    'engin'=>'required|string',
                     'brand_id'=>'numeric|',
-                    'price'=>'sometimes',
-                    'model_number'=>'sometimes',
-                    'speed'=>'numeric',
-                    'tank'=>'sometimes',
-                    'seats'=>'sometimes',
-                    'status'=>'sometimes',
-                    'desc'=>'string',
-                    'kilos'=>'numeric',
+                    'price'=>'required',
+                    'model_number'=>'required',
+                    'speed'=>'required|numeric',
+                    'tank'=>'required',
+                    'seats'=>'required',
+                    'status'=>'required',
+                    'desc'=>'required|string',
+                    'kilos'=>'required|numeric',
                     'img'=>'image',
-                    'is_automatic'=>'sometimes',
+                    'is_automatic'=>'required',
                 ]);
                 $imgPath=$car->img;
 

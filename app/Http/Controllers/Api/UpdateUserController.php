@@ -97,7 +97,7 @@ class UpdateUserController extends Controller
         $validate = null;
         try {
             $this->validate = $request->validate([
-                'password' => '|required|confirmed',
+                'password' => '|required|confirmed|min:6',
                 'old_password' => '|required',
 
             ]);
